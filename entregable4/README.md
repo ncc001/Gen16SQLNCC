@@ -1,26 +1,41 @@
 # SKELETON
 
-- Express
-- PostgreSQL
-- Sequelize ORM 
-- Autenticación con Tokens
-- Bcrypt para hashear contraseñas
-- Uso de Json Web Token
+API structure:
 
----
+## GET /api/v1/users
 
-- Rutas de Login y creación de usuario (register)
-- Herramienta para publicar imagenes de perfil
-- CRUD de usuarios con autenticacion y manejo de permisos
-- /users/:id DELETE, PUT
-- /users/me
+Get all users
 
-Orden
-1. app.js
-2. .env
-3. config.js
-4. database.js
-5. modelos
-6. controladores
-7. servicios
-8. rutas
+## POST /api/v1/auth/register
+
+Register a new user
+
+### Body - Example
+
+```json
+{
+	"firstName": "Nelson",
+	"lastName": "Carrion",
+	"email": "nelson.c@gmail.com",
+	"password": "qwerty",
+	"phone": "+51993848376",
+	"birthday": "1994/01/15",
+	"gender": "Masculino",
+	"country": "peru"
+}
+```
+
+## POST /api/v1/auth/login
+
+Login a user
+
+### Body - Example
+
+```json
+{
+	"email": "nelson.c@gmail.com",
+	"password": "qwerty"
+}
+```
+
+GET /api/v1/users/me
